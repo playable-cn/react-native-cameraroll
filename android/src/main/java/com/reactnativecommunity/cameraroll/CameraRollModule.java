@@ -180,6 +180,10 @@ public class CameraRollModule extends ReactContextBaseJavaModule {
           sourceName = fullSourceName;
           sourceExt = "";
         }
+        boolean isExtensionPresent = !"".equals(mOptions.getString("extension"));
+        if (isExtensionPresent) {
+          sourceExt = mOptions.getString("extension");
+        }
         while (!dest.createNewFile()) {
           dest = new File(exportDir, sourceName + "_" + (n++) + sourceExt);
         }

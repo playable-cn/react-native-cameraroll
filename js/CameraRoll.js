@@ -126,6 +126,7 @@ export type PhotoIdentifiersPage = {
 export type SaveToCameraRollOptions = {
   type?: 'photo' | 'video' | 'auto',
   album?: string,
+  extension?: '',
 };
 
 export type GetAlbumsParams = {
@@ -173,7 +174,7 @@ class CameraRoll {
     tag: string,
     options: SaveToCameraRollOptions = {},
   ): Promise<string> {
-    let {type = 'auto', album = ''} = options;
+    let {type = 'auto', album = ''， extension = ''} = options;
     invariant(
       typeof tag === 'string',
       'CameraRoll.saveToCameraRoll must be a valid string.',
@@ -193,7 +194,7 @@ class CameraRoll {
         type = 'photo';
       }
     }
-    return RNCCameraRoll.saveToCameraRoll(tag, {type, album});
+    return RNCCameraRoll.saveToCameraRoll(tag, {type, album, extension});
   }
   static saveToCameraRoll(
     tag: string,

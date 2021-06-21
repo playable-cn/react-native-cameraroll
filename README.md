@@ -153,7 +153,8 @@ Returns a Promise which will resolve with the new URI.
 | ---- | ---------------------- | -------- | ---------------------------------------------------------- |
 | tag  | string                 | Yes      | See above.                                                 |
 | type | enum('photo', 'video') | No       | Overrides automatic detection based on the file extension. |
-| album | string                | No       | The album to save to |
+| album | string                | No       | The album to save to                                       |
+| extension | string            | No       | The save file extension                                    |
 
 ---
 ### `getAlbums()`

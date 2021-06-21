@@ -174,7 +174,7 @@ class CameraRoll {
     tag: string,
     options: SaveToCameraRollOptions = {},
   ): Promise<string> {
-    let {type = 'auto', album = ''， extension = ''} = options;
+    let {type = 'auto', album = '', extension = ''} = options;
     invariant(
       typeof tag === 'string',
       'CameraRoll.saveToCameraRoll must be a valid string.',
